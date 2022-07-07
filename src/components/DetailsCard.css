@@ -1,0 +1,31 @@
+.Details-card {
+  border-radius: 8px;
+  background-color: #ff8906;
+  padding: 25px;
+  width: 25%;
+  margin: 10px;
+  border: 0px;
+}
+.grow {
+  transition: all 0.2s ease-in-out;
+}
+.grow:hover {
+  transform: scale(1.1);
+}
+.Details-card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.Details-card-header {
+  font-size: 1rem;
+  color: #fffffe;
+}
+
+.Details-card-image {
+  border-radius: 50%;
+  width: 25%;
+  margin-right: 10px;
+}
