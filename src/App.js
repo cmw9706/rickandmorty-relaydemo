@@ -7,8 +7,8 @@ import {
 } from "react-relay/hooks";
 import RelayEnvironment from "./RelayEnvironment";
 import React from "react";
-
 import DetailsCard from "./components/DetailsCard";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 const { Suspense } = React;
 
@@ -49,9 +49,11 @@ function App(props) {
 function AppRoot() {
   return (
     <RelayEnvironmentProvider environment={RelayEnvironment}>
-      <Suspense fallback={"Loading..."}>
-        <App preloadedQuery={preloadedQuery} />
-      </Suspense>
+      <ErrorBoundary fallback="We got an error!">
+        <Suspense fallback={"Loading..."}>
+          <App preloadedQuery={preloadedQuery} />
+        </Suspense>
+      </ErrorBoundary>
     </RelayEnvironmentProvider>
   );
 }
